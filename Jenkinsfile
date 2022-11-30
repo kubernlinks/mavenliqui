@@ -18,7 +18,7 @@ pipeline {
         sh 'mvn clean package -Dmaven.test.skip=true'
         sh 'mvn liquibase:update'  
         sh 'mvn liquibase:status -PTEST'
-        sh 'mvn spring-boot:run'
+        sh 'nohup mvn spring-boot:run'
       }
     }
     stage('QA') {
